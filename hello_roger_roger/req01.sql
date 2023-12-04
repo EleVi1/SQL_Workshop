@@ -1,1 +1,1 @@
-
+SELECT 'Hello Roger Roger!';
