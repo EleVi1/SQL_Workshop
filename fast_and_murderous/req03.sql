@@ -1,4 +1,6 @@
-SELECT person_id, case_id, content
-FROM justice.testimonies
-WHERE content LIKE '%Nexus N3%' and (content SIMILAR TO '%speeding%' or content
-SIMILAR TO '%speed%' or content SIMILAR TO '%fast%' or content SIMILAR TO '%reckless%');
+SELECT person_id, case_id, content, description
+FROM justice.testimonies, justice.cases
+WHERE case_id = justice.cases.id and content LIKE '%Nexus N3%'
+and (description SIMILAR TO '%speeding%'
+or description SIMILAR TO '%speed%' or description SIMILAR TO '%fast%'
+or description SIMILAR TO '%reckless%');
