@@ -1,9 +1,9 @@
-CREATE SCHEMA nexus;
-CREATE SCHEMA nexus_food;
-CREATE SCHEMA nexus_it;
-CREATE SCHEMA techwave;
-CREATE SCHEMA finstar;
-CREATE SCHEMA guardforce;
+CREATE SCHEMA IF NOT EXISTS nexus;
+CREATE SCHEMA IF NOT EXISTS nexus_food;
+CREATE SCHEMA IF NOT EXISTS nexus_it;
+CREATE SCHEMA IF NOT EXISTS techwave;
+CREATE SCHEMA IF NOT EXISTS finstar;
+CREATE SCHEMA IF NOT EXISTS guardforce;
 
 CREATE TYPE nexus.position as ENUM (
     'JUNIOR',
@@ -26,7 +26,7 @@ CREATE TYPE nexus_food.nutriscore as ENUM (
     'E'
 );
 
-CREATE TABLE public.employees
+CREATE TABLE if not exists nexus.employees
 (
     id integer,
     first_name varchar(25),
@@ -35,7 +35,52 @@ CREATE TABLE public.employees
     salary numeric(10,2)
 );
 
-CREATE TABLE nexus.nexus_relations
+CREATE TABLE if not exists nexus_it.employees
+(
+    id integer,
+    first_name varchar(25),
+    last_name varchar(25),
+    employee_position nexus.position,
+    salary numeric(10,2)
+);
+
+CREATE TABLE if not exists techwave.employees
+(
+    id integer,
+    first_name varchar(25),
+    last_name varchar(25),
+    employee_position nexus.position,
+    salary numeric(10,2)
+);
+
+CREATE TABLE if not exists finstar.employees
+(
+    id integer,
+    first_name varchar(25),
+    last_name varchar(25),
+    employee_position nexus.position,
+    salary numeric(10,2)
+);
+
+CREATE TABLE if not exists nexus_food.employees
+(
+    id integer,
+    first_name varchar(25),
+    last_name varchar(25),
+    employee_position nexus.position,
+    salary numeric(10,2)
+);
+
+CREATE TABLE if not exists guardforce.employees
+(
+    id integer,
+    first_name varchar(25),
+    last_name varchar(25),
+    employee_position nexus.position,
+    salary numeric(10,2)
+);
+
+CREATE TABLE if not exists nexus.nexus_relations
 (
     id integer,
     parent_company varchar(25),
@@ -43,7 +88,7 @@ CREATE TABLE nexus.nexus_relations
     relationship_type nexus.relationship_type
 );
 
-CREATE TABLE nexus_it.software_assets
+CREATE TABLE if not exists nexus_it.software_assets
 (
     id integer,
     software_name varchar(50),
@@ -51,7 +96,7 @@ CREATE TABLE nexus_it.software_assets
     expiration_date date
 );
 
-CREATE TABLE techwave.project_milestones
+CREATE TABLE if not exists techwave.project_milestones
 (
     id integer,
     milestone_name varchar(50),
@@ -59,7 +104,7 @@ CREATE TABLE techwave.project_milestones
     completion_status boolean
 );
 
-CREATE TABLE finstar.investments
+CREATE TABLE if not exists finstar.investments
 (
     id integer,
     investment_name varchar(50),
@@ -68,14 +113,14 @@ CREATE TABLE finstar.investments
     date_invested date
 );
 
-CREATE TABLE nexus_food.products
+CREATE TABLE if not exists nexus_food.products
 (
     id integer,
     product_name varchar(25),
     product_nutriscore nexus_food.nutriscore
 );
 
-CREATE TABLE guardforce.incident_reports
+CREATE TABLE if not exists guardforce.incident_reports
 (
     id integer,
     incident_description text,
