@@ -1,6 +1,6 @@
 UPDATE migration.medical_record_entries
 SET description = 
-    CASE WHEN length(description) >= 100
+    CASE WHEN length(description) > 100
         THEN substring(description from '^.{97}')||'...'
     ELSE
         description
