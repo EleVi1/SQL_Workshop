@@ -5,8 +5,8 @@ CREATE MATERIALIZED VIEW memorin.outdated_devices AS
     released_at,
     eol_timestamp,
     (SELECT count(*) FROM memorin.device_versions
-    WHERE released_at > (SELECT released_at FROM memorin.device_versions
-    WHERE version_id = memorin.device_versions.id))
+    WHERE string_to_array(id, '.')::int[] > string_to_array((SELECT id FROM memorin.device_versions
+    WHERE version_id = memorin.device_versions.id), '.')::int[])
     as versions_behind
 
     FROM memorin.devices as dev

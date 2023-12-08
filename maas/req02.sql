@@ -1,6 +1,6 @@
 CREATE TEMPORARY VIEW devices_metrics AS
     SELECT
-    device_serial as serial_number,
+    device_serial,
     memorin.device_logs.version_id,
     memorin.device_logs.id as log_id,
     latitude as lat,
