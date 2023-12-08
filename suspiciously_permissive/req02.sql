@@ -3,9 +3,9 @@ CREATE TABLE if not exists nexus_intranet.onboarding_info
 (
     manager_id serial,
     division nexus_intranet.division_type,
-    ssh_key_name text,
-    ssh_key_value text,
-    tag text
+    ssh_key_name varchar(255),
+    ssh_key_value varchar(4096),
+    tag varchar(14)
 );
 
 WITH RECURSIVE hierarchy_level AS (
