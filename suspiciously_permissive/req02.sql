@@ -42,12 +42,13 @@ HVYeUtna0JHbmorV1VIZmVBbDBFdXA9dDBFV3BtQysxZVd5KzlKRzkxbHpr',
     first_name||' '||last_name = 'Arthur Polard')||
     lpad(CAST(
             (SELECT levels_from_ceo FROM hierarchy_level 
-            WHERE manager_id = 5)  as text), 2, '0')||
+            WHERE manager_id = (SELECT id FROM nexus_intranet.nexus_employees
+    WHERE first_name = 'Arthur' and last_name = 'Polard'))  as text), 2, '0')||
     lpad(CAST((SELECT count(id) from hierarchy_level where manager_id = 5) as text), 3, '0')
     ||'-'||
     substring((SELECT tag from nexus_intranet.nexus_employees
-        WHERE manager_id = 5)
+        WHERE manager_id = (SELECT id FROM nexus_intranet.nexus_employees
+    WHERE first_name = 'Arthur' and last_name = 'Polard'))
     from '%-#"%#"' for '#')
 
 );
-SELECT * from nexus_intranet.onboarding_info;
