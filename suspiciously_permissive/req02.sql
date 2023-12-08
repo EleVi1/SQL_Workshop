@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS nexus_intranet.onboarding_info;
 CREATE TABLE if not exists nexus_intranet.onboarding_info
 (
     manager_id serial,
