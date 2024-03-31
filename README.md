@@ -37,3 +37,8 @@ This workshop aims to provide a hands-on introduction to SQL (Structured Query L
    - Views
    - Common Table Expression
    - Recursive Queries
+
+---
+
+## License
+SQL workshop organized by EPITA
