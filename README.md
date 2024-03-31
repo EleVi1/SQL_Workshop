@@ -14,12 +14,18 @@ This workshop aims to provide a hands-on introduction to SQL (Structured Query L
 
 1. **First wave**:
    - Overview of SQL and its importance.
-   - Installation and setup of SQL environment (MySQL, PostgreSQL, SQLite, etc.).
+   - Advanced selection data
+   - Conditional operators (WHERE, BETWEEN, NULL)
+   - Pattern matching (LIKE, SIMILAR TO)
+   - Functions and operators and dates
 
 2. **Second wave**:
-   - Structure of SQL queries (SELECT, INSERT, UPDATE, DELETE).
-   - Filtering data with WHERE.
-   - Sorting results with ORDER BY.
+   - Database handling
+   - Datatypes
+   - Creation, deletion
+   - Constraints
+   - Data manipulation (insertion, alteration)
+   - Subqueries
 
 3. **Third wave**:
    - Joins (INNER JOIN, LEFT JOIN, RIGHT JOIN).
@@ -27,5 +33,7 @@ This workshop aims to provide a hands-on introduction to SQL (Structured Query L
    - Aggregating data with GROUP BY and aggregate functions (SUM, AVG, COUNT, etc.).
 
 4. **Fourth wave**:
-   - Creating, altering, and dropping tables.
-   - Primary and foreign key constraints.
+   - Transactions, savepoints
+   - Views
+   - Common Table Expression
+   - Recursive Queries
